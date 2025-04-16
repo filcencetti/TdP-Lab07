@@ -53,7 +53,7 @@ class View(ft.UserControl):
         self._page.controls.append(row1)
 
         # List View where the reply is printed
-        self.lst_result = ft.ListView(expand=1, spacing=10, padding=20, auto_scroll=True)
+        self.lst_result = ft.ListView(expand=1, spacing=10, padding=20, auto_scroll=False)
         self._page.controls.append(self.lst_result)
         self._page.update()
 

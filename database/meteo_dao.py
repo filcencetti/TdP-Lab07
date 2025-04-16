@@ -55,7 +55,7 @@ class MeteoDao():
             query = """SELECT Localita, Data, Umidita
                             FROM situazione
                             WHERE MONTH(Data) = '%s' and DAY(Data) < '16'
-                            ORDER BY s.Data ASC"""
+                            ORDER BY Data ASC"""
             cursor.execute(query,
                            (month,))
             for row in cursor:
