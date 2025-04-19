@@ -42,6 +42,7 @@ class Model:
         for situazione in parziale:
             if situazione.localita == candidate.localita:
                 counter +=1
+
         if counter >= 6:
             return False
 
@@ -79,18 +80,16 @@ class Model:
             if i>=2 and (parziale[i-1].localita != parziale[i].localita or
                            parziale[i-2].localita != parziale[i].localita):
                 costo += 100
-
         return costo
 
     def _ricorsione(self,parziale,lista_situazioni):
         # condizione terminale
-        if len(parziale) ==15:
+        if len(parziale) == 15:
             self.n_soluzioni += 1
             costo = self._calcola_costo(parziale)
             if self.costo_ottimo == -1 or self.costo_ottimo > costo:
                 self.costo_ottimo = costo
                 self.soluzione_ottima = copy.deepcopy(parziale)
-
 
         #condizione ricorsiva
         else:
